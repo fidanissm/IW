@@ -1,0 +1,5 @@
+def delete_member():
+    member_id = input("Enter ID to delete: ")
+    global members
+    members = [m for m in members if m['ID'] != member_id]
+    print(" Member deleted if ID was found.")
