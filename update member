@@ -1,11 +1,12 @@
-def update_member():
-    member_id = input("Enter member ID to update: ")
-    for member in members:
-        if member['ID'] == member_id:
-            print(f"Current info: {member}")
-            member['Name'] = input("New Name: ") or member['Name']
-            member['Age'] = int(input("New Age: ") or member['Age'])
-            member['Balance'] = float(input("New Balance: ") or member['Balance'])
-            print("✅ Member updated successfully.")
+ member_id = input("Enter ID to update: ")
+    for m in members:
+        if m['ID'] == member_id:
+            m['Name'] = input("Enter new name: ")
+            try:
+                m['Age'] = int(input("Enter new age: "))
+                m['Balance'] = float(input("Enter new balance: "))
+                print(" Member updated.")
+            except ValueError:
+                print(" Invalid age or balance.")
             return
-    print("❌ Member not found.")
+    print(" Member not found.")
