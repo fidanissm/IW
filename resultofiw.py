@@ -67,15 +67,17 @@ def main_menu():
 def add_member():
     try:
         member_id = input("Enter Member ID: ")
+         for m in members:
+            if m['ID'] == member_id:
+                print("⚠️ A member with this ID already exists. Please enter a different ID.")
+                return
         name = input("Enter Name: ")
         age = int(input("Enter Age: "))
         balance = float(input("Enter Balance: "))
         members.append({'ID': member_id, 'Name': name, 'Age': age, 'Balance': balance})
         print(" Member added.")
     except ValueError:
-        print(" Invalid input. Age and Balance must be numbers.")
-
-# Task 4: Store using list of dicts (already used)
+        print(" Invalid input. Age and Balance must be numbers."
 
 # Task 5: View all members
 def view_members():
